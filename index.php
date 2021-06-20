@@ -67,3 +67,144 @@
                 }
             }
         ?>
+
+
+
+
+<section class='header'>
+          <div class='form-container'>
+              <h1 class="headline">Get your Ideal home at an affordable price</h1>
+              <form action="result.php" method="GET" id="search_form">
+                    <input name="search-location" class="input-style" id="search-location" type="search" placeholder="Search by Location" autocomplete="off"/>
+                    <div id='hint_box'></div>
+                    <select class="range-select" name="rent_range" id="range-select">
+                        <option value="" selected disabled>Rent Range</option>
+                        <option value="500-1000">500-1000 Birr</option>
+                        <option value="1000-3000">1000-3000 Birr</option>
+                        <option value="3000-5000">3000-5000 Birr</option>
+                        <option value="Above 5000">Above 5000 birr</option>
+                    </select>
+                    <button class='submit-btn' type="search" name="search_btn" id="submit_btn">Search</button>
+              </form>
+          </div>
+      </section>
+        <section class='about-us' id="about_gojo">
+            <h3 class='about-us-title'>About Gojo.com</h3>
+            <hr/>
+            <h2>Your best Companion</h2>
+            <p class='about-us-para'>Gojo is a new start up company that offers the opportunity for house owners and renter to easily get what they want in the fastest time possible.
+                So choose us we will be your best companion in finding a home where you and your family enjoy without any damage done to your pocket 😂😂.
+            </p>
+            <h2>Here is something that our customers got to say about us</h2>
+            <div class="testimony-container">
+                <div class="testimony_div animate__animated">
+                    <img src='images/GettyImages-507244236.jpg' class="testimony"/>
+                    <h4>Martha Simon</h4>
+                    <p>I am very delighted that I found the house of my choice. Thank you Gojo.com</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="testimony_div animate__animated">
+                    <img src='images/lady-img.jpg' class="testimony"/>
+                    <h4>Mekdes Tesfaye</h4>
+                    <p>My house was not rented for two months. Thanks to Gojo.com it is a home for a wonderful people</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="testimony_div animate__animated">
+                    <img src='images/profile.jpg' class="testimony"/>
+                    <h4>Bizunesh Gezahegn</h4>
+                    <p>Gojo.com saved my time and money. I don't know how to repay them. Thanks.</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </section>
+        <section class='register' id="register_login">
+            <div class="login">
+                <h1 class='brand-title'>Login</h1>
+                <form action="<?php verifyUser();?>" method="post" id="login_check">
+                    <input class='input-style' id="login-user" type="text" placeholder="Enter your email" name="Email" autocomplete="off" required>
+                    <div class="usercheck">
+                        <input class='input-style' id="login-password" type="password" name="password" placeholder="Enter your password" required>
+                        <div id="incorrect"></div>
+                    </div>
+                    <div style="text-align:end;"><a href="forgotPassword.php" class="forgot">Need help? forgot password</a> </div>
+                    <button type="submit" name="login_btn" class="submit-btn" id="login-btn">Login</button>
+                </form>
+            </div>
+            <div class="form-input">
+                <p class="headline-label">Don't have Account? Register and leave everything to us!!</p>
+                <form class='registration' action="<?php addRenter();?>" method="POST" enctype="multipart/form-data" id="registration-form">
+                    <div style="display:none;position: absolute;top:19em;right:6.1em;width:300px;background-color: rgb(211, 22, 22);text-align: center;padding:7px;" id="warning">
+                            <h3 style="margin:0;color:#fff;">Incorrect Phone number</h3>
+                    </div>
+                    <label class="headline-label" for='name' >Name:</label>
+                    <input id="contact-name" class='input-style' placeholder="Enter your name" name="name" required/>
+                    <label class="headline-label" for='email'>Email:</label>
+                    <div class="emailfield">
+                        <input type="email" id="reg_email" class='input-style' placeholder="Enter your email address" name="email" required>
+                         <div id='emailCheck'></div>
+                    </div>
+                    <label class="headline-label" for='phone'>Phone Number</label>
+                    <div class="phonefield">
+                        <input type="text" style="height:40px;width:54px;border-style:none;border-radius:2px 0 0 2px;background-color: #fff;" value="  +251" disabled><input id="phone" type="tel" class='input-style' style="border-radius: 0 2px 2px 0;width:240px; margin:0;" placeholder="Enter phone number" name="phone" required>
+                        <div id="invalidPhone"></div>
+                    </div>
+                    <label class="headline-label" for='password'>Password:</label>
+                    <input id="password" type="password" class='input-style' placeholder="Enter your password" name="password" required>
+                    <label class="headline-label" for='conf-pass'>Confirm Password:</label>
+                    <div class="passwordfield">
+                    <input id="conf-pass" type="password" class='input-style' placeholder="Confirm your Password" required>
+                        <div id="passwordCheck"></div>
+                    </div>
+                    <label class="headline-label" for="city">City:</label>
+                    <input id="city" class='input-style' type="text" placeholder="Enter your city name" name="city" required/>
+                    <label class="headline-label" for="location">Specific area name:</label>
+                    <input id="area" class='input-style' type="text" placeholder="Enter the specific name of your area" name="area" required/>
+                    <label class="headline-label" for='beds'>Number of Beds</label>
+                    <div class="bedField">
+                        <input id="beds" type="number" class='input-style' placeholder="Enter the number of beds" name="beds" min="1" required>
+                        <div id="bedCheck"></div>
+                    </div>
+                    <label class="headline-label" for='basic_utility'>Does the house has Electricity and Water?</label>
+                    <select name="utility" id="basic" class="input-style" style="width:310px;" required>
+                        <option value="" selected disabled>Select Yes or No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <label class="headline-label" for='beds'>Is transportation accessible in your area?</label>
+                    <select name="transportation" id="transportation" class="input-style" style="width:310px" required>
+                        <option value="" selected disabled>Select Yes or No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <label class="headline-label">Ideal Rent:</label>
+                    <div class="rentField">
+                        <input id="rentNum" class="input-style" type="number" name="rent_range" placeholder="Enter your Ideal monthly rent" min="500" required>
+                        <div id="rentCheck"></div>
+                    </div>
+                    <div id="image-container" style="display:none;margin: 0;grid-column-start: 1;grid-column-end: span 2;">
+                        <img src=" " alt="Your house picture" style="height: 150px;" id="image1"/>
+                        <img src=" " alt="Your house picture" style="height: 150px;" id="image2"/>
+                        <img src=" " alt="Your house picture" style="height: 150px;" id="image3"/>
+                    </div>    
+                    <label class="headline-label" for="picture">Picture of the house:</label>
+                    <div class="picturefield">
+                            <input id="picture" class='input-style file' type="file" accept="image/*" name="picture[]" multiple required/>
+                            <div id="pictureCheck"></div>
+                    </div>
+                    <button id='register' class="submit-btn" type='submit' name="register">Register!</button>
+                </form>
+            </div>
+        </section>
+        
