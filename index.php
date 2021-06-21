@@ -208,3 +208,78 @@
             </div>
         </section>
         
+        <section class="contact-us" id="contact_gojo">
+            <h3 class='about-us-title'>Contact us</h3>
+            <hr/>
+            <h2>if you want to work with us or give us suggestion</h2>
+             <form class='contact-form' action="<?php addSuggestion(); ?>" method="POST" id="suggestion_form">
+                    <label class="headline-label color" for='name' >Name:</label>
+                    <input id="name" class='input-style color' placeholder="Enter your name" name="Name" required/>
+                    <label class="headline-label color" for='email'>Email:</label>
+                    <input type="email" class='input-style color' placeholder="Enter your email address" name="Email" id="suggest_email" required>
+                    <label class="headline-label color textarea-label" for="location">Suggestion:</label>
+                    <textarea class="textarea" placeholder="Questions or Suggestions..." name="Content" id="text_area" required></textarea>
+                    <button id="contact-btn" type='submit' name="contact_us">Contact us!</button>
+                </form>
+        </section>
+        <footer>
+            <div class="footer-section">
+                <div>
+                    <h3 class="footer-headline">Get to know us</h3>
+                    <hr class="bottom_border"/>
+                    <ul class='footer-list'>
+                        <li><a class="header-link" href="#">Blog</a></li>
+                        <li><a class="header-link" href="#">About Gojo</a></li>
+                        <li><a class="header-link" href="#">Investor Relations</a></li>
+                        <li><a class="header-link" href="#">Carreer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-headline">Work with Us</h3>
+                    <hr class="bottom_border"/>
+                    <ul class='footer-list'>
+                        <li><a class="header-link" href="#">Rent a house on Gojo</a></li>
+                        <li><a class="header-link" href="#">Advertise your Products</a></li>
+                        <li><a class="header-link" href="#">Rent Properties</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-headline">Need help?</h3>
+                    <hr class="bottom_border"/>
+                    <ul class='footer-list'>
+                        <li><a class="header-link" href="#">FAQS</a></li>
+                        <li><a class="header-link" href="#">Privacy</a></li>
+                        <li><a class="header-link" href="#">Policy</a></li>
+                        <li><a class="header-link" href="#">Terms</a></li>
+                        <li><a class="header-link" href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-headline">Contacts</h3>
+                    <hr class="bottom_border"/>
+                    <ul class='footer-list'>
+                        <li><a class="header-link" href="http://www.facebook.com">Facebook</a></li>
+                        <li><a class="header-link" href="http://www.twitter.com">Twitter</a></li>
+                        <li><a class="header-link" href="http://www.instagram.com">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+                <hr class="footer-hr"/>
+                <p class="trade-mark"><strong>GOJO</strong>.com Copyright &copy; 2021 Gojo rental Service</p>    
+        </footer>
+        <?php
+        if(!isset($_SESSION["cookies"])&&!isset($_COOKIE["Gojo"])){
+         ?>
+                <div id="cookie">
+                    <p>We use cookies to improve our user experience and provide relevant houses for our users.</p>
+                    <button class="cookie_btn" id="accept_btn">Accept</button>
+                    <button class="cookie_btn" id="reject_btn">Reject</button>
+                </div>
+                <?php
+            }
+        ?>
+        <script src="libs/waypoint/jquery.waypoints.min.js"></script>
+        <script src="scripts/main.js"></script>
+</body>
+
+</html>
